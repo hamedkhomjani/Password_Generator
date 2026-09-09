@@ -1,20 +1,76 @@
 :root {
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  color-scheme: light dark;
-  --bg: #0b1020;
-  --surface: #121a33;
-  --surface-2: #1a2340;
-  --border: #263055;
-  --text: #e6e9f5;
-  --muted: #8b94b3;
-  --accent: #6c5ce7;
-  --accent-2: #a29bfe;
-  --success: #2ecc71;
-  --warning: #f0a500;
-  --danger: #e74c3c;
-  line-height: 1.6;
   font-weight: 400;
+  line-height: 1.6;
+
   color-scheme: dark;
+  --bg: #08080a;
+  --surface: #131316;
+  --surface-2: #1c1c21;
+  --border: #2a2a31;
+  --text: #f4f4f5;
+  --muted: #90909a;
+  --accent: #c8ff00;
+  --accent-2: #00ffa3;
+  --on-accent: #0a0a0b;
+  --accent-soft: rgba(200, 255, 0, 0.1);
+  --accent-glow: rgba(200, 255, 0, 0.3);
+  --accent-glow-strong: rgba(200, 255, 0, 0.5);
+  --accent-glow-soft: rgba(200, 255, 0, 0.14);
+  --nav-bg: rgba(8, 8, 10, 0.85);
+  --feature-bg: rgba(19, 19, 22, 0.3);
+  --shadow-card: rgba(0, 0, 0, 0.5);
+  --success: #00ffa3;
+  --warning: #ffd400;
+  --danger: #ff4d4d;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f4f4f2;
+  --surface: #ffffff;
+  --surface-2: #ececea;
+  --border: #d6d6d2;
+  --text: #161618;
+  --muted: #64645f;
+  --accent: #5f9e00;
+  --accent-2: #00a876;
+  --on-accent: #ffffff;
+  --accent-soft: rgba(95, 158, 0, 0.12);
+  --accent-glow: rgba(95, 158, 0, 0.25);
+  --accent-glow-strong: rgba(95, 158, 0, 0.4);
+  --accent-glow-soft: rgba(95, 158, 0, 0.12);
+  --nav-bg: rgba(244, 244, 242, 0.85);
+  --feature-bg: rgba(255, 255, 255, 0.6);
+  --shadow-card: rgba(0, 0, 0, 0.12);
+  --success: #0fa968;
+  --warning: #a67f00;
+  --danger: #c42b2b;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    color-scheme: light;
+    --bg: #f4f4f2;
+    --surface: #ffffff;
+    --surface-2: #ececea;
+    --border: #d6d6d2;
+    --text: #161618;
+    --muted: #64645f;
+    --accent: #5f9e00;
+    --accent-2: #00a876;
+    --on-accent: #ffffff;
+    --accent-soft: rgba(95, 158, 0, 0.12);
+    --accent-glow: rgba(95, 158, 0, 0.25);
+    --accent-glow-strong: rgba(95, 158, 0, 0.4);
+    --accent-glow-soft: rgba(95, 158, 0, 0.12);
+    --nav-bg: rgba(244, 244, 242, 0.85);
+    --feature-bg: rgba(255, 255, 255, 0.6);
+    --shadow-card: rgba(0, 0, 0, 0.12);
+    --success: #0fa968;
+    --warning: #a67f00;
+    --danger: #c42b2b;
+  }
 }
 
 * {
@@ -32,6 +88,7 @@ body {
   color: var(--text);
   min-height: 100vh;
   overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 a {

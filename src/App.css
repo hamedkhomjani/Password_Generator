@@ -13,7 +13,7 @@ section[id] {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(11, 16, 32, 0.85);
+  background: var(--nav-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
@@ -43,14 +43,14 @@ section[id] {
   border-radius: 10px;
   display: grid;
   place-items: center;
-  color: #fff;
+  color: var(--on-accent);
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  box-shadow: 0 4px 16px rgba(108, 92, 231, 0.4);
+  box-shadow: 0 4px 16px var(--accent-glow);
 }
 
 .brand-name em {
   font-style: normal;
-  color: var(--accent-2);
+  color: var(--accent);
 }
 
 .nav-links {
@@ -71,18 +71,38 @@ section[id] {
 
 .nav-cta {
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #fff !important;
+  color: var(--on-accent) !important;
   padding: 10px 20px;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
   transition: transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+  box-shadow: 0 4px 12px var(--accent-glow);
 }
 
 .nav-cta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(108, 92, 231, 0.45);
+  box-shadow: 0 6px 20px var(--accent-glow-strong);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--muted);
+  transition: color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
 /* ===== HERO ===== */
@@ -96,8 +116,8 @@ section[id] {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(600px 400px at 10% 20%, rgba(108, 92, 231, 0.18), transparent 60%),
-    radial-gradient(700px 500px at 90% 40%, rgba(108, 92, 231, 0.1), transparent 60%);
+    radial-gradient(600px 400px at 10% 20%, var(--accent-glow-soft), transparent 60%),
+    radial-gradient(700px 500px at 90% 40%, var(--accent-glow-soft), transparent 60%);
   pointer-events: none;
 }
 
@@ -126,8 +146,8 @@ section[id] {
   padding: 6px 14px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: rgba(108, 92, 231, 0.1);
-  color: var(--accent-2);
+  background: var(--accent-soft);
+  color: var(--accent);
   margin-bottom: 20px;
 }
 
@@ -140,7 +160,7 @@ section[id] {
 }
 
 .grad {
-  background: linear-gradient(135deg, var(--accent-2), #fd79a8);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -166,18 +186,18 @@ section[id] {
   gap: 8px;
   padding: 14px 26px;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #fff;
+  color: var(--on-accent);
   border-radius: 10px;
   font-weight: 600;
   font-size: 15px;
   transition: transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 6px 20px rgba(108, 92, 231, 0.35);
+  box-shadow: 0 6px 20px var(--accent-glow);
   border: none;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(108, 92, 231, 0.5);
+  box-shadow: 0 10px 28px var(--accent-glow-strong);
 }
 
 .btn-ghost {
@@ -194,7 +214,7 @@ section[id] {
 
 .btn-ghost:hover {
   border-color: var(--accent);
-  background: rgba(108, 92, 231, 0.08);
+  background: var(--accent-soft);
 }
 
 .hero-stats {
@@ -222,7 +242,7 @@ section[id] {
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 32px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 24px 60px var(--shadow-card);
 }
 
 .gt-output {
@@ -369,8 +389,8 @@ input[type='range'] {
 .gt-opt-label em {
   font-style: normal;
   font-size: 11px;
-  color: var(--accent-2);
-  background: rgba(108, 92, 231, 0.15);
+  color: var(--accent);
+  background: var(--accent-soft);
   padding: 2px 7px;
   border-radius: 5px;
 }
@@ -404,7 +424,7 @@ input[type='range'] {
   top: 2px;
   width: 5px;
   height: 10px;
-  border: solid #fff;
+  border: solid var(--on-accent);
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
   opacity: 0;
@@ -422,18 +442,18 @@ input[type='range'] {
   gap: 10px;
   padding: 16px;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: #fff;
+  color: var(--on-accent);
   border: none;
   border-radius: 10px;
   font-size: 15px;
   font-weight: 700;
   transition: transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 6px 18px rgba(108, 92, 231, 0.35);
+  box-shadow: 0 6px 18px var(--accent-glow);
 }
 
 .gt-generate:hover {
   transform: translateY(-1px);
-  box-shadow: 0 10px 26px rgba(108, 92, 231, 0.5);
+  box-shadow: 0 10px 26px var(--accent-glow-strong);
 }
 
 .gt-generate:active {
@@ -489,7 +509,7 @@ input[type='range'] {
 .features {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  background: rgba(18, 26, 51, 0.3);
+  background: var(--feature-bg);
   max-width: none;
 }
 
@@ -516,7 +536,7 @@ input[type='range'] {
 .feature:hover {
   transform: translateY(-4px);
   border-color: var(--accent);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 16px 40px var(--shadow-card);
 }
 
 .feature-icon {
@@ -526,7 +546,7 @@ input[type='range'] {
   display: grid;
   place-items: center;
   color: var(--accent-2);
-  background: rgba(108, 92, 231, 0.15);
+  background: var(--accent-soft);
   margin-bottom: 20px;
 }
 
@@ -570,7 +590,7 @@ input[type='range'] {
 .sec-num {
   font-size: 42px;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--accent-2), #fd79a8);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -619,7 +639,7 @@ input[type='range'] {
 .faq-item summary::after {
   content: '+';
   font-size: 24px;
-  color: var(--accent-2);
+  color: var(--accent);
   flex-shrink: 0;
   margin-left: 12px;
   font-weight: 400;
@@ -630,7 +650,7 @@ input[type='range'] {
 }
 
 .faq-item summary:hover {
-  color: var(--accent-2);
+  color: var(--accent);
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -658,7 +678,7 @@ input[type='range'] {
   text-align: center;
   padding: 64px 32px;
   background:
-    radial-gradient(400px 200px at 50% 0%, rgba(108, 92, 231, 0.25), transparent 70%),
+    radial-gradient(400px 200px at 50% 0%, var(--accent-glow-soft), transparent 70%),
     var(--surface);
 }
 

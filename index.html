@@ -9,6 +9,18 @@
       content="SecureLock - Free, professional random password generator. Create strong, cryptographically secure passwords instantly."
     />
     <title>SecureLock | Professional Password Generator</title>
+    <script>
+      ;(function () {
+        var saved = localStorage.getItem('sl-theme')
+        var theme =
+          saved === 'light' || saved === 'dark'
+            ? saved
+            : window.matchMedia('(prefers-color-scheme: light)').matches
+              ? 'light'
+              : 'dark'
+        document.documentElement.dataset.theme = theme
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>
